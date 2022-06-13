@@ -1,0 +1,5 @@
+package com.contactmanage.controller;
+
+public class ContactController {
+
+}
