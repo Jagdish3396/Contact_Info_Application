@@ -1,0 +1,9 @@
+package com.contactmanage.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.contactmanage.model.Contact;
+
+public interface ContactRepo extends JpaRepository<Contact, Integer> {
+
+}
