@@ -1,0 +1,12 @@
+package com.contactmanage.repository;
+
+import org.springframework.stereotype.Repository;
+
+import com.contactmanage.model.Contact;
+
+@Repository
+public class ContactRepoImpl {
+
+	
+
+}

@@ -1,0 +1,93 @@
+package com.bikkadIt.model;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+@Entity
+@Table(name = "USER_DETAILS")
+public class UserEntity {
+
+	@Id
+	// @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "USER_ID")
+	private int uid;
+	@Column(name = "USER_NAME")
+	private String uname;
+	@Column(name = "USER_ADDRESS")
+	private String uaddress;
+	@Column(name = "USER_AGE")
+	private int age;
+	@CreationTimestamp
+	@Column(updatable = false)
+	
+	private LocalDate createdDate;
+	@UpdateTimestamp
+//	@Column(insertable = false)
+	@Column(name="UPDATED_DATE",insertable = false)
+	private LocalDate updatedDate;
+
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public String getUaddress() {
+		return uaddress;
+	}
+
+	public void setUaddress(String uaddress) {
+		this.uaddress = uaddress;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public LocalDateTime getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(LocalDateTime updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+
+	@Override
+	public String toString() {
+		return "UserEntity [uid=" + uid + ", uname=" + uname + ", uaddress=" + uaddress + ", age=" + age
+				+ ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
+	}
+
+}

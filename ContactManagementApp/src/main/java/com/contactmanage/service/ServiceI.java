@@ -1,5 +1,10 @@
 package com.contactmanage.service;
 
-public interface ServiceI {
+import java.util.List;
 
+import com.contactmanage.model.Contact;
+
+public interface ServiceI {
+	public boolean saveContact(Contact contact);
+	public List<Contact> getAllContact();
 }

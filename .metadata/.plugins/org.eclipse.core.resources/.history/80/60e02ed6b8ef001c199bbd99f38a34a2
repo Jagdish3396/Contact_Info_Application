@@ -1,0 +1,7 @@
+package com.contactmanage.service;
+
+import com.contactmanage.model.Contact;
+
+public interface ServiceI {
+	public boolean saveContact(Contact contact);
+}
