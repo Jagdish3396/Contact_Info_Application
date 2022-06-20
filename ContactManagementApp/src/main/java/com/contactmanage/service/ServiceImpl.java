@@ -35,18 +35,28 @@ public class ServiceImpl implements ServiceI {
 		if (contact.isPresent()) {
 			Contact c = contact.get();
 			return c;
-			
+
 		}
 		return null;
 	}
 
 	@Override
 	public boolean updateContact(Contact contact) {
-	Contact save = contactRepo.save(contact);
-	if(save!=null)
-		return true;
-	else
-		return false;
+		Contact save = contactRepo.save(contact);
+		if (save != null)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public boolean deleteContactById(Integer id) {
+		Optional<Contact> byId = contactRepo.findById(id);
+		if (byId.isPresent()) {
+			contactRepo.deleteById(id);
+			return true;
+		} else
+			return false;
 	}
 
 }
