@@ -21,7 +21,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Data
-//@ToString
+@ToString
 @Entity
 //@Setter
 //@Getter

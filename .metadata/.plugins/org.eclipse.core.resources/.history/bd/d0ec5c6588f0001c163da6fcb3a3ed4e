@@ -1,0 +1,9 @@
+package com.contactmanage.configuration;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableS
+public class SwaggerConfig {
+
+}

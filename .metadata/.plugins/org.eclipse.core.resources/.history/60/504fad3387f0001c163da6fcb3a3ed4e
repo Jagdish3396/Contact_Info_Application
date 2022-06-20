@@ -1,0 +1,5 @@
+package com.contactmanage.configuration;
+
+public class SwaggerConfig {
+
+}
