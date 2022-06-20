@@ -1,6 +1,7 @@
 package com.contactmanage.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,28 @@ public class ServiceImpl implements ServiceI {
 
 	@Override
 	public List<Contact> getAllContact() {
-		List<Contact> all = contactRepo.findAll();
-		return all;
+		List<Contact> list = contactRepo.findAll();
+		return list;
+	}
+
+	@Override
+	public Contact getContactById(Integer id) {
+		Optional<Contact> contact = contactRepo.findById(id);
+		if (contact.isPresent()) {
+			Contact c = contact.get();
+			return c;
+			
+		}
+		return null;
+	}
+
+	@Override
+	public boolean updateContact(Contact contact) {
+	Contact save = contactRepo.save(contact);
+	if(save!=null)
+		return true;
+	else
+		return false;
 	}
 
 }
